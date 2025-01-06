@@ -1,6 +1,8 @@
-﻿using DoctorAvailability.Internal.Endpoints.AddSlot;
+﻿using DoctorAvailability1.Internal.Data;
+using DoctorAvailability1.Internal.Endpoints.AddSlot;
+using DoctorAvailability1.Internal.Models;
 
-namespace DoctorAvailability.Internal.Services;
+namespace DoctorAvailability1.Internal.Services;
 internal class DoctorSlotService(DoctorSlotRepo doctorSlotRepo)
 {
     internal async Task<List<DoctorSlot>> GetMySlots()

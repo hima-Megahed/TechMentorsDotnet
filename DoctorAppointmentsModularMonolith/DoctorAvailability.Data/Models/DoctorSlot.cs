@@ -1,16 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DoctorAvailability1.Internal.Models;
-internal class DoctorSlot
+namespace DoctorAvailability.Data.Models;
+public class DoctorSlot
 {
     public Guid Id { get; private set; }
     public DateTime Date { get; private set; }
     public Guid DoctorId { get; private set; }
     [MaxLength(100)]
-    public string DoctorName { get; private set; }
+    public string DoctorName { get; private set; } = string.Empty;
     public bool IsReserved { get; private set; }
     public decimal Cost { get; private set; }
     private DoctorSlot() { }
+
     public static DoctorSlot Create(DateTime date, Guid doctorId, string doctorName, decimal cost)
     {
         if (date == default)
@@ -29,6 +30,7 @@ internal class DoctorSlot
         {
             throw new ArgumentException("Cost is required", nameof(cost));
         }
+
         return new DoctorSlot
         {
             Id = Guid.NewGuid(),
@@ -39,4 +41,8 @@ internal class DoctorSlot
         };
     }
 
+    public void Reserve()
+    {
+        IsReserved = true;
+    }
 }

@@ -1,5 +1,5 @@
 using Carter;
-using DoctorAvailability.Shared.Registrar;
+using DoctorAvailability.Presentation.Registrar;
 using Scalar.AspNetCore;
 using Shared.Extensions;
 
@@ -9,12 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-
-var doctorAvailabilityAssembly = typeof(DoctorAvailabilityModule).Assembly;
-
+var doctorAvailabilityAssembly = typeof(DoctorAvailabilityModuleRegistrar).Assembly;
 builder.Services
     .AddCarterWithAssemblies(doctorAvailabilityAssembly);
 
+// Register module services
 builder.Services
     .AddDoctorAvailabilityModule(builder.Configuration);
 
@@ -29,6 +28,9 @@ if (app.Environment.IsDevelopment())
 app.MapScalarApiReference();
 app.UseHttpsRedirection();
 app.MapCarter();
+
+// Register modules db initializer
+app.UseDoctorAvailabilityDbInitializer();
 
 app.Run();
 

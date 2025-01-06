@@ -1,4 +1,6 @@
-﻿namespace DoctorAvailability.Internal.Data;
+﻿using DoctorAvailability1.Internal.Models;
+
+namespace DoctorAvailability1.Internal.Data;
 internal class DoctorSlotRepo(DoctorAvailabilityContext context)
 {
     internal async Task<List<DoctorSlot>> GetMySlots()

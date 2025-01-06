@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
+using DoctorAvailability1.Internal.Models;
 
-namespace DoctorAvailability.Internal.Data;
+namespace DoctorAvailability1.Internal.Data;
 internal class DoctorAvailabilityContext(DbContextOptions<DoctorAvailabilityContext> options)
     : DbContext(options)
 {

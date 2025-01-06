@@ -1,6 +1,7 @@
-﻿using DoctorAvailability.Internal.Services;
+﻿using DoctorAvailability1.Internal.Data;
+using DoctorAvailability1.Internal.Services;
 
-namespace DoctorAvailability.Shared.Registrar;
+namespace DoctorAvailability1.Shared.Registrar;
 public static class DoctorAvailabilityModule
 {
     public static IServiceCollection AddDoctorAvailabilityModule(this IServiceCollection services,

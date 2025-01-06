@@ -16,14 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modules\AppointmentBooking\AppointmentBooking.csproj" />
-    <ProjectReference Include="..\Modules\AppointmentConfirmation\AppointmentConfirmation.csproj" />
-    <ProjectReference Include="..\Modules\DoctorAppointmentManagement\DoctorAppointmentManagement.csproj" />
-    <ProjectReference Include="..\Modules\DoctorAvailability\DoctorAvailability.csproj" />
+    <Folder Include="db\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="db\" />
+    <ProjectReference Include="..\DoctorAvailability.Internal\DoctorAvailability.Presentation.csproj" />
+    <ProjectReference Include="..\Shared\Shared\Shared.csproj" />
   </ItemGroup>
 
 </Project>

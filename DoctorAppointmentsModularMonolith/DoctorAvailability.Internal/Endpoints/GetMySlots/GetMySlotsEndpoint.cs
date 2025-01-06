@@ -1,18 +1,17 @@
 ﻿using Carter;
-using DoctorAvailability1.Internal.Services;
+using DoctorAvailability.Business.Services.DoctorSlot;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
-namespace DoctorAvailability1.Internal.Endpoints.GetMySlots;
+namespace DoctorAvailability.Presentation.Endpoints.GetMySlots;
 public class GetMySlotsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/MySlots", async (DoctorSlotService servcie) =>
+        app.MapGet("/MySlots", async (DoctorSlotService service) =>
         {
-
-            return Results.Ok(await servcie.GetMySlots());
+            return Results.Ok(await service.GetMySlots());
         }).WithTags("DoctorAvailability");
     }
 }
