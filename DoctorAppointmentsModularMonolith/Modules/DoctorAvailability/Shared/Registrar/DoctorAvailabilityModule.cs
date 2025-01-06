@@ -13,6 +13,7 @@ public static class DoctorAvailabilityModule
         {
             options.UseSqlite(connectionString);
         });
+
         services.AddScoped<DoctorSlotRepo>();
         services.AddScoped<DoctorSlotService>();
 
