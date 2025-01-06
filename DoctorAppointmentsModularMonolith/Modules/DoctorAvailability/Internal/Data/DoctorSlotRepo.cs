@@ -9,6 +9,12 @@ internal class DoctorSlotRepo(DoctorAvailabilityContext context)
             .AsNoTracking()
             .ToListAsync();
     }
+    internal async Task<Guid> AddSlot(DoctorSlot slot)
+    {
+        context.DoctorSlots.Add(slot);
+        await context.SaveChangesAsync();
+        return slot.Id;
+    }
 
 
 }

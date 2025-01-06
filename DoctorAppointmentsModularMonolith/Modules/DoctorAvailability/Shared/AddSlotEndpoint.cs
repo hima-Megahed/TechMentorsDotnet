@@ -5,14 +5,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
 namespace DoctorAvailability.Shared;
-public class AddSlotEndpoint : ICarterModule
+public class GetMySlotsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/AddSlot", async (DoctorSlotRequest request, DoctorSlotServcie servcie) =>
+        app.MapGet("/MySlots", async (DoctorSlotServcie servcie) =>
         {
 
-            return Results.Ok(await servcie.AddSlot(request));
+            return Results.Ok(await servcie.GetMySlots());
         }).WithTags("DoctorAvailability");
     }
 }
