@@ -15,6 +15,21 @@ internal class DoctorSlotRepo(DoctorAvailabilityContext context)
         await context.SaveChangesAsync();
         return slot.Id;
     }
+    internal async Task<List<DoctorSlot>> GetAvailableSlots()
+    {
+        return await context
+             .DoctorSlots
+             .AsNoTracking()
+             .Where(s => !s.IsReserved)
+             .ToListAsync();
+    }
+    internal async Task<DoctorSlot?> GetSlotsById(Guid id)
+    {
+        return await context
+             .DoctorSlots
+             .AsNoTracking()
+             .FirstOrDefaultAsync(s => s.Id == id);
+    }
 }
 
 

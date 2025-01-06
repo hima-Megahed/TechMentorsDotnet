@@ -16,6 +16,9 @@ public static class DoctorAvailabilityModule
 
         services.AddScoped<DoctorSlotRepo>();
         services.AddScoped<DoctorSlotService>();
+        services.AddScoped<IAvailableSlotsService, AvailableSlotsService>();
+        services.AddScoped<ISlotInfoService, SlotInfoService>();
+
 
         return services;
     }
