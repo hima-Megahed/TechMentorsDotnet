@@ -1,6 +1,6 @@
 ﻿using DoctorAvailability.Internal.Services;
 
-namespace DoctorAvailability.Shared;
+namespace DoctorAvailability.Shared.Registrar;
 public static class DoctorAvailabilityModule
 {
     public static IServiceCollection AddDoctorAvailabilityModule(this IServiceCollection services,
@@ -14,7 +14,7 @@ public static class DoctorAvailabilityModule
             options.UseSqlite(connectionString);
         });
         services.AddScoped<DoctorSlotRepo>();
-        services.AddScoped<DoctorSlotServcie>();
+        services.AddScoped<DoctorSlotService>();
 
         return services;
     }

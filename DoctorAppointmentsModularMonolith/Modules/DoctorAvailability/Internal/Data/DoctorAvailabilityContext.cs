@@ -4,9 +4,7 @@ namespace DoctorAvailability.Internal.Data;
 internal class DoctorAvailabilityContext(DbContextOptions<DoctorAvailabilityContext> options)
     : DbContext(options)
 {
-
-
-    internal DbSet<DoctorSlot> DoctorSlots => Set<DoctorSlot>();
+    internal DbSet<DoctorSlot> DoctorSlots { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
