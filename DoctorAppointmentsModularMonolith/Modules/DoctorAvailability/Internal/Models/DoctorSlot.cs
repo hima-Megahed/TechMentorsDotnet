@@ -1,10 +1,13 @@
-﻿namespace DoctorAvailability.Internal.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DoctorAvailability.Internal.Models;
 internal class DoctorSlot
 {
     public Guid Id { get; private set; }
     public DateTime Date { get; private set; }
     public Guid DoctorId { get; private set; }
-    public string DoctorName { get; private set; } = string.Empty;
+    [MaxLength(100)]
+    public string DoctorName { get; private set; }
     public bool IsReserved { get; private set; }
     public decimal Cost { get; private set; }
     private DoctorSlot() { }

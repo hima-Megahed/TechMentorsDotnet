@@ -3,19 +3,16 @@ using System;
 using DoctorAvailability.Internal.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace DoctorAvailability.Migrations
+namespace DoctorAvailability.Internal.Data.Migrations
 {
     [DbContext(typeof(DoctorAvailabilityContext))]
-    [Migration("20250106130453_CreateDoctorSlots")]
-    partial class CreateDoctorSlots
+    partial class DoctorAvailabilityContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

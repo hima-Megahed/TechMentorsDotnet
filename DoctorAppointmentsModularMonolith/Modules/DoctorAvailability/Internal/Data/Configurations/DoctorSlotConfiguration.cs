@@ -12,6 +12,6 @@ internal class DoctorSlotConfiguration : IEntityTypeConfiguration<DoctorSlot>
         //builder.Property(p => p.DoctorName).IsRequired().HasMaxLength(100);
 
         //builder.Property(p => p.IsReserved);
-        //builder.Property(p => p.Cost).HasColumnType("decimal(18,2)");
+        builder.Property(p => p.Cost).HasColumnType("decimal(18,2)");
     }
 }
