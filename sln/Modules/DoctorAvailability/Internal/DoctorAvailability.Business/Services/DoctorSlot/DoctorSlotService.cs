@@ -3,16 +3,16 @@ using DoctorAvailability.Business.Services.DoctorSlot.Models;
 using DoctorAvailability.Shared.Models;
 
 namespace DoctorAvailability.Business.Services.DoctorSlot;
-public class DoctorSlotService(DoctorSlotRepo doctorSlotRepo)
+public class DoctorSlotService(DoctorSlotRepository doctorSlotRepository)
 {
     public async Task<List<Data.Models.DoctorSlot>> GetMySlots()
     {
-        return await doctorSlotRepo.GetMySlots();
+        return await doctorSlotRepository.GetMySlots();
     }
 
     public async Task<List<Data.Models.DoctorSlot>> GetDoctorAvailableSlots()
     {
-        return await doctorSlotRepo.GetDoctorAvailableSlots();
+        return await doctorSlotRepository.GetDoctorAvailableSlots();
     }
 
 
@@ -23,14 +23,14 @@ public class DoctorSlotService(DoctorSlotRepo doctorSlotRepo)
             doctorSlotRequestModel.DoctorName,
             doctorSlotRequestModel.Cost);
 
-        var slotId = await doctorSlotRepo.AddSlot(slot);
-        await doctorSlotRepo.SaveChangesAsync();
+        var slotId = await doctorSlotRepository.AddSlot(slot);
+        await doctorSlotRepository.SaveChangesAsync();
         return slotId;
     }
 
     public async Task<SlotDto> ReserveSlot(Guid slotId)
     {
-        var slot = await doctorSlotRepo.GetSlotById(slotId);
+        var slot = await doctorSlotRepository.GetSlotById(slotId);
         if (slot is null)
             throw new Exception("Slot not found");
 
@@ -39,7 +39,7 @@ public class DoctorSlotService(DoctorSlotRepo doctorSlotRepo)
 
         slot.Reserve();
 
-        await doctorSlotRepo.SaveChangesAsync();
+        await doctorSlotRepository.SaveChangesAsync();
         return new SlotDto
         {
             Id = slot.Id,

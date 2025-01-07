@@ -40,6 +40,35 @@ public class DoctorSlot
             Cost = cost
         };
     }
+    public static DoctorSlot CreateReserved(DateTime date, Guid doctorId, string doctorName, decimal cost)
+    {
+        if (date == default)
+        {
+            throw new ArgumentException("Date is required", nameof(date));
+        }
+        if (doctorId == default)
+        {
+            throw new ArgumentException("DoctorId is required", nameof(doctorId));
+        }
+        if (doctorName == string.Empty)
+        {
+            throw new ArgumentException("DoctorName is required", nameof(doctorName));
+        }
+        if (cost == default)
+        {
+            throw new ArgumentException("Cost is required", nameof(cost));
+        }
+
+        return new DoctorSlot
+        {
+            Id = Guid.NewGuid(),
+            Date = date,
+            DoctorId = doctorId,
+            DoctorName = doctorName,
+            Cost = cost,
+            IsReserved = true
+        };
+    }
 
     public void Reserve()
     {
