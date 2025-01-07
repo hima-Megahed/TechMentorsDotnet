@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\Shared\Shared.csproj" />
+    <Folder Include="Facade\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DoctorAvailability.Shared.csproj" />
+    <ProjectReference Include="..\DoctorAvailability.Data\DoctorAvailability.Data.csproj" />
   </ItemGroup>
 
 </Project>
