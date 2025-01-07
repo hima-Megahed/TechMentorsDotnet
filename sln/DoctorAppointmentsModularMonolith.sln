@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Presenta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Shared", "Modules\DoctorAvailability\Shared\DoctorAvailability.Shared.csproj", "{90543A09-02F8-4CDF-8B2B-C164AA39C5BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2E7AE801-4CBD-4A9F-BA95-D50CFEC620DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.UnitTests", "Modules\DoctorAvailability\Tests\DoctorAvailability.UnitTests\DoctorAvailability.UnitTests.csproj", "{4A6284BB-D00B-4983-B2B4-E5695D0A81DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{90543A09-02F8-4CDF-8B2B-C164AA39C5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90543A09-02F8-4CDF-8B2B-C164AA39C5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90543A09-02F8-4CDF-8B2B-C164AA39C5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A6284BB-D00B-4983-B2B4-E5695D0A81DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A6284BB-D00B-4983-B2B4-E5695D0A81DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A6284BB-D00B-4983-B2B4-E5695D0A81DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A6284BB-D00B-4983-B2B4-E5695D0A81DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +88,7 @@ Global
 		{D9612BCD-EF39-4A45-9846-C8DB80A2D29C} = {6608F8E5-72F8-4A7B-A85C-FD77D85FFF78}
 		{09AC401A-D652-405D-9E2E-60ED0AF0128E} = {6608F8E5-72F8-4A7B-A85C-FD77D85FFF78}
 		{90543A09-02F8-4CDF-8B2B-C164AA39C5BF} = {C4151272-B008-42E3-830F-0E9AC8788896}
+		{2E7AE801-4CBD-4A9F-BA95-D50CFEC620DD} = {A1560B84-F536-4554-8C38-50F12BAF5E3F}
+		{4A6284BB-D00B-4983-B2B4-E5695D0A81DB} = {2E7AE801-4CBD-4A9F-BA95-D50CFEC620DD}
 	EndGlobalSection
 EndGlobal
