@@ -9,7 +9,7 @@ public class GetMySlotsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/MySlots", async (DoctorSlotService service) =>
+        app.MapGet("/MySlots", async (IDoctorSlotService service) =>
         {
             return Results.Ok(await service.GetMySlots());
         }).WithTags("DoctorAvailability");

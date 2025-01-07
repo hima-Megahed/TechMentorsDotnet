@@ -3,7 +3,7 @@ using DoctorAvailability.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DoctorAvailability.Business.Repositories;
-public class DoctorSlotRepository(DoctorAvailabilityContext context)
+public class DoctorSlotRepository(DoctorAvailabilityContext context) : IDoctorSlotRepository
 {
     public async Task<List<DoctorSlot>> GetDoctorAvailableSlots()
     {

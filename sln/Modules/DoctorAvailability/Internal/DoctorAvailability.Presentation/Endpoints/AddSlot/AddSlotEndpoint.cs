@@ -10,7 +10,7 @@ public class AddSlotEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/AddSlot", async (DoctorSlotRequestModel request, DoctorSlotService service) =>
+        app.MapPost("/AddSlot", async (DoctorSlotRequestModel request, IDoctorSlotService service) =>
         {
             return Results.Ok(await service.AddSlot(request));
         }).WithTags("DoctorAvailability");

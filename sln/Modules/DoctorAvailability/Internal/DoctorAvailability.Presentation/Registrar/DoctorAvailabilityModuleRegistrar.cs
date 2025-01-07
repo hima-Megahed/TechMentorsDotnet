@@ -22,8 +22,8 @@ public static class DoctorAvailabilityModuleRegistrar
             options.UseSqlite(connectionString);
         });
 
-        services.AddScoped<DoctorSlotRepository>();
-        services.AddScoped<DoctorSlotService>();
+        services.AddScoped<IDoctorSlotRepository, DoctorSlotRepository>();
+        services.AddScoped<IDoctorSlotService, DoctorSlotService>();
         services.AddScoped<IDoctorAvailability, Business.Facade.DoctorAvailability>();
 
         return services;
