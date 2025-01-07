@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
 namespace DoctorAvailability.Internal.Endpoints.GetMySlots;
-public class GetMySlotsEndpoint : ICarterModule
+internal class GetMySlotsEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
