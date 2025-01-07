@@ -22,10 +22,7 @@ internal class Appointment : Aggregate<Guid>
         {
             throw new ArgumentException("PatientId is required", nameof(slotId));
         }
-        if (patientName == string.Empty)
-        {
-            throw new ArgumentException("Patient Name is required", nameof(patientName));
-        }
+        ArgumentException.ThrowIfNullOrWhiteSpace(patientName, nameof(patientName));
 
         var appointment = new Appointment
         {

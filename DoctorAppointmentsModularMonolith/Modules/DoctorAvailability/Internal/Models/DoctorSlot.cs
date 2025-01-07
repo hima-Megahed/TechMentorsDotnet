@@ -21,10 +21,10 @@ internal class DoctorSlot : Entity<Guid>
         {
             throw new ArgumentException("DoctorId is required", nameof(doctorId));
         }
-        if (doctorName == string.Empty)
-        {
-            throw new ArgumentException("DoctorName is required", nameof(doctorName));
-        }
+
+
+        ArgumentException.ThrowIfNullOrWhiteSpace(doctorName, nameof(doctorName));
+
         if (cost == default)
         {
             throw new ArgumentException("Cost is required", nameof(cost));
