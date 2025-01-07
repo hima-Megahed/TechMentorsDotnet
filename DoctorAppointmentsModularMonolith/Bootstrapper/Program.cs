@@ -3,6 +3,7 @@ using AppointmentConfirmation.Shared.Registrar;
 using Carter;
 using DoctorAvailability.Shared.Registrar;
 using Scalar.AspNetCore;
+using Shared.Exceptions.Handler;
 using Shared.Extensions;
 using Shared.Messaging.Extensions;
 
@@ -34,6 +35,9 @@ builder.Services
     .AddAppointmentBookingModule(builder.Configuration)
     .AddAppointmentConfirmationModule();
 
+builder.Services
+    .AddExceptionHandler<CustomExceptionHandler>();
+
 
 var app = builder.Build();
 
@@ -45,6 +49,7 @@ if (app.Environment.IsDevelopment())
 app.MapScalarApiReference();
 app.UseHttpsRedirection();
 app.MapCarter();
+app.UseExceptionHandler(options => { });
 
 app.Run();
 

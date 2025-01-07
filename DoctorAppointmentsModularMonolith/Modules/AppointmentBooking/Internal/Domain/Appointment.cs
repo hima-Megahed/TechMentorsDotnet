@@ -1,4 +1,5 @@
 ﻿using AppointmentBooking.Internal.Domain.Events;
+using DoctorAvailability.Shared;
 using Shared.DDD;
 
 namespace AppointmentBooking.Internal.Domain;
@@ -10,7 +11,7 @@ internal class Appointment : Aggregate<Guid>
     public DateOnly ReservedAt { get; private set; }
     public BookingStatus Status { get; private set; }
     private Appointment() { }
-    public static Appointment Create(Guid slotId, Guid patientId, string patientName)
+    public static Appointment Create(Guid slotId, Guid patientId, string patientName, DoctorSlotDto slot)
     {
 
         if (slotId == default)
@@ -37,7 +38,7 @@ internal class Appointment : Aggregate<Guid>
 
 
         };
-        appointment.AddDomainEvent(new AddAppointmentEvent(appointment));
+        appointment.AddDomainEvent(new AddAppointmentEvent(appointment, slot));
         return appointment;
 
     }
