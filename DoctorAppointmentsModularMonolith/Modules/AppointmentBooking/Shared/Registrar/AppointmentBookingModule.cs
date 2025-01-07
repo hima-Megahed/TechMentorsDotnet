@@ -1,11 +1,13 @@
-﻿using DoctorAvailability.Internal.Services;
+﻿
+
+
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Shared.Data.Interceptors;
 
-namespace DoctorAvailability.Shared.Registrar;
-public static class DoctorAvailabilityModule
+namespace AppointmentBooking.Shared.Registrar;
+public static class AppointmentBookingModule
 {
-    public static IServiceCollection AddDoctorAvailabilityModule(this IServiceCollection services,
+    public static IServiceCollection AddAppointmentBookingModule(this IServiceCollection services,
        IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
@@ -13,15 +15,12 @@ public static class DoctorAvailabilityModule
         services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
         services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
 
-        services.AddDbContext<DoctorAvailabilityContext>((sp, options) =>
+        services.AddDbContext<AppointmentBookingContext>((sp, options) =>
         {
             options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
             options.UseSqlite(connectionString);
         });
-        services.AddScoped<DoctorSlotRepo>();
-        services.AddScoped<DoctorSlotService>();
-        services.AddScoped<IAvailableSlotsService, AvailableSlotsService>();
-        services.AddScoped<ISlotInfoService, SlotInfoService>();
+
 
 
         return services;

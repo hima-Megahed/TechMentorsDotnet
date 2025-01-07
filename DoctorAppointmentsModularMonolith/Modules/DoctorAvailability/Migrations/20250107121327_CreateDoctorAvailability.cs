@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace DoctorAvailability.Internal.Data.Migrations
+namespace DoctorAvailability.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class CreateDoctorAvailability : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,7 +24,11 @@ namespace DoctorAvailability.Internal.Data.Migrations
                     DoctorId = table.Column<Guid>(type: "TEXT", nullable: false),
                     DoctorName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     IsReserved = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Cost = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Cost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    LastModified = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    LastModifiedBy = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

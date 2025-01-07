@@ -1,3 +1,4 @@
+using AppointmentBooking.Shared.Registrar;
 using Carter;
 using DoctorAvailability.Shared.Registrar;
 using Scalar.AspNetCore;
@@ -11,12 +12,19 @@ builder.Services.AddOpenApi();
 
 
 var doctorAvailabilityAssembly = typeof(DoctorAvailabilityModule).Assembly;
+var appointmentBookingAssembly = typeof(AppointmentBookingModule).Assembly;
+
 
 builder.Services
-    .AddCarterWithAssemblies(doctorAvailabilityAssembly);
+    .AddCarterWithAssemblies(doctorAvailabilityAssembly, appointmentBookingAssembly);
 
 builder.Services
-    .AddDoctorAvailabilityModule(builder.Configuration);
+    .AddMediatRWithAssemblies(appointmentBookingAssembly);
+
+builder.Services
+    .AddDoctorAvailabilityModule(builder.Configuration)
+    .AddAppointmentBookingModule(builder.Configuration);
+
 
 var app = builder.Build();
 

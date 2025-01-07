@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace DoctorAvailability.Internal.Data.Migrations
+namespace DoctorAvailability.Migrations
 {
     [DbContext(typeof(DoctorAvailabilityContext))]
     partial class DoctorAvailabilityContextModelSnapshot : ModelSnapshot
@@ -28,6 +28,12 @@ namespace DoctorAvailability.Internal.Data.Migrations
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
@@ -41,6 +47,12 @@ namespace DoctorAvailability.Internal.Data.Migrations
 
                     b.Property<bool>("IsReserved")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

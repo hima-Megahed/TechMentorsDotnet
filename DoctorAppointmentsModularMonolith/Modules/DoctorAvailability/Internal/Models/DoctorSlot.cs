@@ -1,13 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Shared.DDD;
 
 namespace DoctorAvailability.Internal.Models;
-internal class DoctorSlot
+internal class DoctorSlot : Entity<Guid>
 {
-    public Guid Id { get; private set; }
+
     public DateTime Date { get; private set; }
     public Guid DoctorId { get; private set; }
-    [MaxLength(100)]
-    public string DoctorName { get; private set; }
+
+    public string DoctorName { get; private set; } = string.Empty;
     public bool IsReserved { get; private set; }
     public decimal Cost { get; private set; }
     private DoctorSlot() { }
