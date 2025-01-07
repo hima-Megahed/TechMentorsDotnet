@@ -112,4 +112,15 @@ public class DoctorSlotRepositoryTests
         // Assert
         Assert.Null(result);
     }
+
+    [Fact]
+    public async Task AddSlot_ShouldThrow_WhenDoctorNameIsNull()
+    {
+        // Arrange
+        var context = CreateInMemoryContext();
+        var repository = new DoctorSlotRepository(context);
+
+        // Act & Assert
+        var exception = await Assert.ThrowsAsync<ArgumentException>(() => repository.AddSlot(DoctorSlot.Create(DateTime.Now, Guid.NewGuid(), null, 100)));
+    }
 }

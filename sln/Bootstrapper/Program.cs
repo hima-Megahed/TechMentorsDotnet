@@ -29,6 +29,7 @@ app.MapScalarApiReference();
 app.UseHttpsRedirection();
 app.MapCarter();
 
+
 // Register modules db initializer
 app.UseDoctorAvailabilityDbInitializer();
 

@@ -22,7 +22,7 @@ public class DoctorSlot
         {
             throw new ArgumentException("DoctorId is required", nameof(doctorId));
         }
-        if (doctorName == string.Empty)
+        if (doctorName == string.Empty || doctorName == null)
         {
             throw new ArgumentException("DoctorName is required", nameof(doctorName));
         }
