@@ -19,7 +19,6 @@
     <ProjectReference Include="..\Modules\AppointmentBooking\AppointmentBooking.csproj" />
     <ProjectReference Include="..\Modules\AppointmentConfirmation\AppointmentConfirmation.csproj" />
     <ProjectReference Include="..\Modules\DoctorAppointmentManagement\DoctorAppointmentManagement.csproj" />
-    <ProjectReference Include="..\Modules\DoctorAvailability\DoctorAvailability.csproj" />
   </ItemGroup>
 
   <ItemGroup>

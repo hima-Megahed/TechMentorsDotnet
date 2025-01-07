@@ -3,28 +3,28 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace DoctorAvailability.Migrations
+namespace AppointmentBooking.@internal.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDoctorAvailability : Migration
+    public partial class AlterAppointmentBooking : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "DoctorAvailability");
+                name: "AppointmentBooking");
 
             migrationBuilder.CreateTable(
-                name: "DoctorSlots",
-                schema: "DoctorAvailability",
+                name: "Appointments",
+                schema: "AppointmentBooking",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    DoctorName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    IsReserved = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Cost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SlotId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PatientId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PatientName = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    ReservedAt = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Status = table.Column<int>(type: "INTEGER", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: true),
                     CreatedBy = table.Column<string>(type: "TEXT", nullable: true),
                     LastModified = table.Column<DateTime>(type: "TEXT", nullable: true),
@@ -32,7 +32,7 @@ namespace DoctorAvailability.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DoctorSlots", x => x.Id);
+                    table.PrimaryKey("PK_Appointments", x => x.Id);
                 });
         }
 
@@ -40,8 +40,8 @@ namespace DoctorAvailability.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "DoctorSlots",
-                schema: "DoctorAvailability");
+                name: "Appointments",
+                schema: "AppointmentBooking");
         }
     }
 }
