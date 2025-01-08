@@ -1,7 +1,7 @@
-﻿using DoctorAvailability.Business.Repositories;
-using DoctorAvailability.Business.Services.DoctorSlot.Models;
-using DoctorAvailability.Business.Services.DoctorSlot;
-using DoctorAvailability.Data.Models;
+﻿using DoctorAvailability.Internal.Business.Repositories;
+using DoctorAvailability.Internal.Business.Services.DoctorSlot;
+using DoctorAvailability.Internal.Business.Services.DoctorSlot.Models;
+using DoctorAvailability.Internal.Data.Models;
 using Moq;
 
 namespace DoctorAvailability.UnitTests.ServicesTests;

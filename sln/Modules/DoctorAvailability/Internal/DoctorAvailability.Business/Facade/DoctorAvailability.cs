@@ -1,8 +1,8 @@
-﻿using DoctorAvailability.Business.Services.DoctorSlot;
+﻿using DoctorAvailability.Internal.Business.Services.DoctorSlot;
 using DoctorAvailability.Shared.Facade;
 using DoctorAvailability.Shared.Models;
 
-namespace DoctorAvailability.Business.Facade;
+namespace DoctorAvailability.Internal.Business.Facade;
 
 public class DoctorAvailability(IDoctorSlotService doctorSlotService) : IDoctorAvailability
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DoctorAvailability.Data.Models;
+namespace DoctorAvailability.Internal.Data.Models;
 public class DoctorSlot
 {
     public Guid Id { get; private set; }

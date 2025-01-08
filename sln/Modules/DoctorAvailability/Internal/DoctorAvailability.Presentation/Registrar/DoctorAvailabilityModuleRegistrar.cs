@@ -1,14 +1,14 @@
-﻿using DoctorAvailability.Business.Repositories;
-using DoctorAvailability.Business.Services.DoctorSlot;
-using DoctorAvailability.Data.DbContext;
-using DoctorAvailability.Data.Models;
+﻿using DoctorAvailability.Internal.Business.Repositories;
+using DoctorAvailability.Internal.Business.Services.DoctorSlot;
+using DoctorAvailability.Internal.Data.DbContext;
+using DoctorAvailability.Internal.Data.Models;
 using DoctorAvailability.Shared.Facade;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DoctorAvailability.Presentation.Registrar;
+namespace DoctorAvailability.Internal.Presentation.Registrar;
 public static class DoctorAvailabilityModuleRegistrar
 {
     public static IServiceCollection AddDoctorAvailabilityModule(this IServiceCollection services,

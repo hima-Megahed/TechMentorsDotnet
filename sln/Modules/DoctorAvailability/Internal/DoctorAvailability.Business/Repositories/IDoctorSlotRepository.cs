@@ -1,6 +1,6 @@
-﻿using DoctorAvailability.Data.Models;
+﻿using DoctorAvailability.Internal.Data.Models;
 
-namespace DoctorAvailability.Business.Repositories;
+namespace DoctorAvailability.Internal.Business.Repositories;
 
 public interface IDoctorSlotRepository
 {

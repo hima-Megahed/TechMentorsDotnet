@@ -1,8 +1,8 @@
-﻿using DoctorAvailability.Data.DbContext;
-using DoctorAvailability.Data.Models;
+﻿using DoctorAvailability.Internal.Data.DbContext;
+using DoctorAvailability.Internal.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoctorAvailability.Business.Repositories;
+namespace DoctorAvailability.Internal.Business.Repositories;
 public class DoctorSlotRepository(DoctorAvailabilityContext context) : IDoctorSlotRepository
 {
     public async Task<List<DoctorSlot>> GetDoctorAvailableSlots()

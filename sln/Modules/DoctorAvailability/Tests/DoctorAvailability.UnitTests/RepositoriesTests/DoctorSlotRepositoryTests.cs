@@ -1,7 +1,7 @@
-﻿using DoctorAvailability.Business.Repositories;
-using DoctorAvailability.Business.Services.DoctorSlot;
-using DoctorAvailability.Data.DbContext;
-using DoctorAvailability.Data.Models;
+﻿using DoctorAvailability.Data.DbContext;
+using DoctorAvailability.Internal.Business.Repositories;
+using DoctorAvailability.Internal.Data.DbContext;
+using DoctorAvailability.Internal.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DoctorAvailability.UnitTests.RepositoriesTests;

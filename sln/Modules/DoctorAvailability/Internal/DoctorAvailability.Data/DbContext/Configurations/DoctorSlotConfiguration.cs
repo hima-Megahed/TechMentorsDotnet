@@ -1,7 +1,7 @@
-﻿using DoctorAvailability.Data.Models;
+﻿using DoctorAvailability.Internal.Data.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DoctorAvailability.Data.DbContext.Configurations;
+namespace DoctorAvailability.Internal.Data.DbContext.Configurations;
 internal class DoctorSlotConfiguration : IEntityTypeConfiguration<DoctorSlot>
 {
     public void Configure(EntityTypeBuilder<DoctorSlot> builder)

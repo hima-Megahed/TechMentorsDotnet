@@ -1,8 +1,8 @@
-﻿using DoctorAvailability.Business.Repositories;
-using DoctorAvailability.Business.Services.DoctorSlot.Models;
+﻿using DoctorAvailability.Internal.Business.Repositories;
+using DoctorAvailability.Internal.Business.Services.DoctorSlot.Models;
 using DoctorAvailability.Shared.Models;
 
-namespace DoctorAvailability.Business.Services.DoctorSlot;
+namespace DoctorAvailability.Internal.Business.Services.DoctorSlot;
 
 public class DoctorSlotService(IDoctorSlotRepository doctorSlotRepository) : IDoctorSlotService
 {
