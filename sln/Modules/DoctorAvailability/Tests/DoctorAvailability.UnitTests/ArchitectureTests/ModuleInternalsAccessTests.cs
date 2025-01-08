@@ -4,7 +4,7 @@ namespace DoctorAvailability.UnitTests.ArchitectureTests;
 
 public class ModuleInternalsAccessTests
 {
-    private const string ModuleNamespace = "DoctorAvailability";
+    private const string ModuleNamespace = "DoctorAvailability.Internal";
 
     [Fact]
     public void Internal_ShouldNotBeAccessedByOtherModules()

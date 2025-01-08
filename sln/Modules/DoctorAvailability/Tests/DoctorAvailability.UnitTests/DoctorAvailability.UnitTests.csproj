@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Internal\DoctorAvailability.Business\DoctorAvailability.Business.csproj" />
-    <ProjectReference Include="..\..\Internal\DoctorAvailability.Data\DoctorAvailability.Data.csproj" />
-    <ProjectReference Include="..\..\Internal\DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj" />
+    <ProjectReference Include="..\..\Internal\DoctorAvailability.Business\DoctorAvailability.Internal.Business.csproj" />
+    <ProjectReference Include="..\..\Internal\DoctorAvailability.Data\DoctorAvailability.Internal.Data.csproj" />
+    <ProjectReference Include="..\..\Internal\DoctorAvailability.Presentation\DoctorAvailability.Internal.Presentation.csproj" />
   </ItemGroup>
 
   <ItemGroup>

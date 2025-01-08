@@ -25,17 +25,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentConfirmation", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentBooking", "AppointmentBooking", "{526835EE-47D3-45D0-B969-3BC7D29C8332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Data", "Modules\DoctorAvailability\Internal\DoctorAvailability.Data\DoctorAvailability.Data.csproj", "{88FEF83C-76F4-4540-BC28-892F24419558}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal.Data", "Modules\DoctorAvailability\Internal\DoctorAvailability.Data\DoctorAvailability.Internal.Data.csproj", "{88FEF83C-76F4-4540-BC28-892F24419558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Business", "Modules\DoctorAvailability\Internal\DoctorAvailability.Business\DoctorAvailability.Business.csproj", "{D9612BCD-EF39-4A45-9846-C8DB80A2D29C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal.Business", "Modules\DoctorAvailability\Internal\DoctorAvailability.Business\DoctorAvailability.Internal.Business.csproj", "{D9612BCD-EF39-4A45-9846-C8DB80A2D29C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Presentation", "Modules\DoctorAvailability\Internal\DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj", "{09AC401A-D652-405D-9E2E-60ED0AF0128E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal.Presentation", "Modules\DoctorAvailability\Internal\DoctorAvailability.Presentation\DoctorAvailability.Internal.Presentation.csproj", "{09AC401A-D652-405D-9E2E-60ED0AF0128E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Shared", "Modules\DoctorAvailability\Shared\DoctorAvailability.Shared.csproj", "{90543A09-02F8-4CDF-8B2B-C164AA39C5BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2E7AE801-4CBD-4A9F-BA95-D50CFEC620DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.UnitTests", "Modules\DoctorAvailability\Tests\DoctorAvailability.UnitTests\DoctorAvailability.UnitTests.csproj", "{4A6284BB-D00B-4983-B2B4-E5695D0A81DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{CBAA82DB-B3DE-4F46-BA89-9099B5FE1660}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,5 +92,6 @@ Global
 		{90543A09-02F8-4CDF-8B2B-C164AA39C5BF} = {C4151272-B008-42E3-830F-0E9AC8788896}
 		{2E7AE801-4CBD-4A9F-BA95-D50CFEC620DD} = {A1560B84-F536-4554-8C38-50F12BAF5E3F}
 		{4A6284BB-D00B-4983-B2B4-E5695D0A81DB} = {2E7AE801-4CBD-4A9F-BA95-D50CFEC620DD}
+		{CBAA82DB-B3DE-4F46-BA89-9099B5FE1660} = {526835EE-47D3-45D0-B969-3BC7D29C8332}
 	EndGlobalSection
 EndGlobal

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DoctorAvailability.Business\DoctorAvailability.Business.csproj" />
+    <ProjectReference Include="..\DoctorAvailability.Business\DoctorAvailability.Internal.Business.csproj" />
   </ItemGroup>
 
 </Project>
