@@ -9,7 +9,7 @@ internal class AddAppointmentEndpoint : ICarterModule
     {
         app.MapPost("/AddAppointment", async (AddAppointmentRequest request, ISender sender) =>
         {
-            var cmd = request.Adapt<UpdateAppointmentStatusCommand>();
+            var cmd = request.Adapt<AddAppointmentCommand>();
             return Results.Ok(await sender.Send(cmd));
         }).WithTags("AppointmentBooking");
     }
