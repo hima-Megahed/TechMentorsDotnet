@@ -1,12 +1,12 @@
-﻿using DoctorAvailability.Internal.Business.Services.DoctorSlot.Models;
+﻿using DoctorAvailability.Business.Services.DoctorSlot.Models;
 using DoctorAvailability.Shared.Models;
 
-namespace DoctorAvailability.Internal.Business.Services.DoctorSlot;
+namespace DoctorAvailability.Business.Services.DoctorSlot;
 
 public interface IDoctorSlotService
 {
-    Task<List<Data.Models.DoctorSlot>> GetMySlots();
-    Task<List<Data.Models.DoctorSlot>> GetDoctorAvailableSlots();
+    Task<List<Internal.Data.Models.DoctorSlot>> GetMySlots();
+    Task<List<Internal.Data.Models.DoctorSlot>> GetDoctorAvailableSlots();
     Task<Guid> AddSlot(DoctorSlotRequestModel doctorSlotRequestModel);
     Task<SlotDto> ReserveSlot(Guid slotId);
 }

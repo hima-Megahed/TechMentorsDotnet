@@ -1,17 +1,17 @@
-﻿using DoctorAvailability.Internal.Business.Repositories;
-using DoctorAvailability.Internal.Business.Services.DoctorSlot.Models;
+﻿using DoctorAvailability.Business.Repositories;
+using DoctorAvailability.Business.Services.DoctorSlot.Models;
 using DoctorAvailability.Shared.Models;
 
-namespace DoctorAvailability.Internal.Business.Services.DoctorSlot;
+namespace DoctorAvailability.Business.Services.DoctorSlot;
 
 public class DoctorSlotService(IDoctorSlotRepository doctorSlotRepository) : IDoctorSlotService
 {
-    public async Task<List<Data.Models.DoctorSlot>> GetMySlots()
+    public async Task<List<Internal.Data.Models.DoctorSlot>> GetMySlots()
     {
         return await doctorSlotRepository.GetMySlots();
     }
 
-    public async Task<List<Data.Models.DoctorSlot>> GetDoctorAvailableSlots()
+    public async Task<List<Internal.Data.Models.DoctorSlot>> GetDoctorAvailableSlots()
     {
         return await doctorSlotRepository.GetDoctorAvailableSlots();
     }
@@ -19,7 +19,7 @@ public class DoctorSlotService(IDoctorSlotRepository doctorSlotRepository) : IDo
 
     public async Task<Guid> AddSlot(DoctorSlotRequestModel doctorSlotRequestModel)
     {
-        var slot = Data.Models.DoctorSlot.Create(doctorSlotRequestModel.Date,
+        var slot = Internal.Data.Models.DoctorSlot.Create(doctorSlotRequestModel.Date,
             doctorSlotRequestModel.DoctorId,
             doctorSlotRequestModel.DoctorName,
             doctorSlotRequestModel.Cost);

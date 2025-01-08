@@ -1,5 +1,5 @@
 using Carter;
-using DoctorAvailability.Internal.Presentation.Registrar;
+using DoctorAvailability.Presentation.Registrar;
 using Scalar.AspNetCore;
 using Shared.Extensions;
 

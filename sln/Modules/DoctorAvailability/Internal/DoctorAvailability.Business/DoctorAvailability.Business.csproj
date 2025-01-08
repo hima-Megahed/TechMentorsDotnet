@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
+    <Folder Include="Facade\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DoctorAvailability.Shared.csproj" />
+    <ProjectReference Include="..\DoctorAvailability.Data\DoctorAvailability.Data.csproj" />
   </ItemGroup>
 
 </Project>

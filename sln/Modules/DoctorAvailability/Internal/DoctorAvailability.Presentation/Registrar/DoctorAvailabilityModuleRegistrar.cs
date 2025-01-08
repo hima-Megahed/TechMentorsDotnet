@@ -1,5 +1,5 @@
-﻿using DoctorAvailability.Internal.Business.Repositories;
-using DoctorAvailability.Internal.Business.Services.DoctorSlot;
+﻿using DoctorAvailability.Business.Repositories;
+using DoctorAvailability.Business.Services.DoctorSlot;
 using DoctorAvailability.Internal.Data.DbContext;
 using DoctorAvailability.Internal.Data.Models;
 using DoctorAvailability.Shared.Facade;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DoctorAvailability.Internal.Presentation.Registrar;
+namespace DoctorAvailability.Presentation.Registrar;
 public static class DoctorAvailabilityModuleRegistrar
 {
     public static IServiceCollection AddDoctorAvailabilityModule(this IServiceCollection services,

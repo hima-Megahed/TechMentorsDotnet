@@ -25,11 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentConfirmation", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentBooking", "AppointmentBooking", "{526835EE-47D3-45D0-B969-3BC7D29C8332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal.Data", "Modules\DoctorAvailability\Internal\DoctorAvailability.Data\DoctorAvailability.Internal.Data.csproj", "{88FEF83C-76F4-4540-BC28-892F24419558}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Data", "Modules\DoctorAvailability\Internal\DoctorAvailability.Data\DoctorAvailability.Data.csproj", "{88FEF83C-76F4-4540-BC28-892F24419558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal.Business", "Modules\DoctorAvailability\Internal\DoctorAvailability.Business\DoctorAvailability.Internal.Business.csproj", "{D9612BCD-EF39-4A45-9846-C8DB80A2D29C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Business", "Modules\DoctorAvailability\Internal\DoctorAvailability.Business\DoctorAvailability.Business.csproj", "{D9612BCD-EF39-4A45-9846-C8DB80A2D29C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Internal.Presentation", "Modules\DoctorAvailability\Internal\DoctorAvailability.Presentation\DoctorAvailability.Internal.Presentation.csproj", "{09AC401A-D652-405D-9E2E-60ED0AF0128E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Presentation", "Modules\DoctorAvailability\Internal\DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj", "{09AC401A-D652-405D-9E2E-60ED0AF0128E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Shared", "Modules\DoctorAvailability\Shared\DoctorAvailability.Shared.csproj", "{90543A09-02F8-4CDF-8B2B-C164AA39C5BF}"
 EndProject
@@ -47,13 +47,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Shared", "Modules\AppointmentBooking\Shared\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj", "{7414B395-866A-4BD0-A1C6-C32AAC0D1610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Internal.Domain", "Modules\AppointmentBooking\Internal\AppointmentBooking.Internal.Domain\AppointmentBooking.Internal.Domain.csproj", "{90AA8C67-8E1F-47DA-BE98-FE8FC79F8AD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Domain", "Modules\AppointmentBooking\Internal\AppointmentBooking.Domain\AppointmentBooking.Domain.csproj", "{90AA8C67-8E1F-47DA-BE98-FE8FC79F8AD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Internal.Web", "Modules\AppointmentBooking\Internal\AppointmentBooking.Internal.Web\AppointmentBooking.Internal.Web.csproj", "{A34196D4-9765-422C-8167-F40A8F50DC12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Web", "Modules\AppointmentBooking\Internal\AppointmentBooking.Web\AppointmentBooking.Web.csproj", "{A34196D4-9765-422C-8167-F40A8F50DC12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Internal.Application", "Modules\AppointmentBooking\Internal\AppointmentBooking.Internal.Application\AppointmentBooking.Internal.Application.csproj", "{51D9C28B-FE2C-4AAF-89A7-A816A462B21C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Application", "Modules\AppointmentBooking\Internal\AppointmentBooking.Application\AppointmentBooking.Application.csproj", "{51D9C28B-FE2C-4AAF-89A7-A816A462B21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Internal.Infrastructure", "Modules\AppointmentBooking\Internal\AppointmentBooking.Internal.Infrastructure\AppointmentBooking.Internal.Infrastructure.csproj", "{2CE6CEDF-53A4-4713-95E2-09A2C722D593}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Infrastructure", "Modules\AppointmentBooking\Internal\AppointmentBooking.Infrastructure\AppointmentBooking.Infrastructure.csproj", "{2CE6CEDF-53A4-4713-95E2-09A2C722D593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

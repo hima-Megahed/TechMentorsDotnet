@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modules\DoctorAvailability\Internal\DoctorAvailability.Presentation\DoctorAvailability.Internal.Presentation.csproj" />
+    <ProjectReference Include="..\Modules\DoctorAvailability\Internal\DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
