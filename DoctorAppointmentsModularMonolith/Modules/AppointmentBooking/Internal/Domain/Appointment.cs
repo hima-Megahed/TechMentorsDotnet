@@ -39,4 +39,8 @@ internal class Appointment : Aggregate<Guid>
         return appointment;
 
     }
+    public void SetStatus(BookingStatus status)
+    {
+        Status = status;
+    }
 }

@@ -1,5 +1,5 @@
 ﻿namespace AppointmentBooking.Internal.Domain;
-internal enum BookingStatus
+public enum BookingStatus
 {
     Pending,
     Completed,

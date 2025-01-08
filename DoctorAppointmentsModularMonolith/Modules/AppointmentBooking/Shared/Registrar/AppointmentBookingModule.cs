@@ -1,6 +1,4 @@
-﻿
-
-
+﻿using AppointmentBooking.Internal.Application.AddAppointment;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Shared.Data.Interceptors;
 
@@ -21,7 +19,7 @@ public static class AppointmentBookingModule
             options.UseSqlite(connectionString);
         });
 
-
+        services.AddScoped<IUpdateAppointmentStatusService, UpdateAppointmentStatusService>();
 
         return services;
     }
