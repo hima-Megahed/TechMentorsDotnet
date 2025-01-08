@@ -3,6 +3,7 @@ using DoctorAvailability.Business.Services.DoctorSlot.Models;
 using DoctorAvailability.Shared.Models;
 
 namespace DoctorAvailability.Business.Services.DoctorSlot;
+
 public class DoctorSlotService(IDoctorSlotRepository doctorSlotRepository) : IDoctorSlotService
 {
     public async Task<List<Data.Models.DoctorSlot>> GetMySlots()
