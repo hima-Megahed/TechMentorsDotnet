@@ -1,6 +1,7 @@
 using AppointmentBooking.Shared.Registrar;
 using AppointmentConfirmation.Shared.Registrar;
 using Carter;
+using DoctorAppointmentManagement.Shared.Registrar;
 using DoctorAvailability.Shared.Registrar;
 using Scalar.AspNetCore;
 using Shared.Exceptions.Handler;
@@ -17,11 +18,12 @@ builder.Services.AddOpenApi();
 var doctorAvailabilityAssembly = typeof(DoctorAvailabilityModule).Assembly;
 var appointmentBookingAssembly = typeof(AppointmentBookingModule).Assembly;
 var appointmentConfirmationAssembly = typeof(AppointmentConfirmationModule).Assembly;
+var doctorAppointmentManagementAssembly = typeof(DoctorAppointmentManagementModule).Assembly;
 
 
 
 builder.Services
-    .AddCarterWithAssemblies(doctorAvailabilityAssembly, appointmentBookingAssembly, appointmentConfirmationAssembly);
+    .AddCarterWithAssemblies(doctorAvailabilityAssembly, appointmentBookingAssembly, appointmentConfirmationAssembly, doctorAppointmentManagementAssembly);
 
 builder.Services
     .AddMediatRWithAssemblies(appointmentBookingAssembly);
@@ -33,6 +35,7 @@ builder.Services
 builder.Services
     .AddDoctorAvailabilityModule(builder.Configuration)
     .AddAppointmentBookingModule(builder.Configuration)
+    .AddDoctorAppointmentManagementModule()
     .AddAppointmentConfirmationModule();
 
 builder.Services
