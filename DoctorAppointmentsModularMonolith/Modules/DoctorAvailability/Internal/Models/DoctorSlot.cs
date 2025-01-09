@@ -25,10 +25,8 @@ internal class DoctorSlot : Entity<Guid>
 
         ArgumentException.ThrowIfNullOrWhiteSpace(doctorName, nameof(doctorName));
 
-        if (cost == default)
-        {
-            throw new ArgumentException("Cost is required", nameof(cost));
-        }
+
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(cost, 0, nameof(cost));
         return new DoctorSlot
         {
             Id = Guid.NewGuid(),
