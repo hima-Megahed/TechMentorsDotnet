@@ -15,7 +15,7 @@ internal class UpcomingAppointmentsRepo(DapperContext _context) : IUpcomingAppoi
                       FROM DoctorSlots s INNER JOIN Appointments a on s.Id= a.SlotId 
                       where a.Status=@bookingStatus and s.Date > @CurrentDate";
         using var connection = _context.CreateConnection();
-        var upcomingAppointments = connection.Query<UpcomingAppointment>(query, new { bookingStatus = (int)BookingStatus.Pending, CurrentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:00") });
+        var upcomingAppointments = await connection.QueryAsync<UpcomingAppointment>(query, new { bookingStatus = (int)BookingStatus.Pending, CurrentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:00") });
         return upcomingAppointments.ToList();
     }
 }
