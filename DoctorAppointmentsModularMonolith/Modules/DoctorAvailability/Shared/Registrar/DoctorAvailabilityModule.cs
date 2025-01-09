@@ -1,4 +1,5 @@
-﻿using DoctorAvailability.Internal.Services;
+﻿using DoctorAvailability.Internal;
+using DoctorAvailability.Internal.Services;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Shared.Data.Interceptors;
 
@@ -18,7 +19,7 @@ public static class DoctorAvailabilityModule
             options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
             options.UseSqlite(connectionString);
         });
-        services.AddScoped<DoctorSlotRepo>();
+        services.AddScoped<IDoctorSlotRepo, DoctorSlotRepo>();
         services.AddScoped<DoctorSlotService>();
         services.AddScoped<IAvailableSlotsService, AvailableSlotsService>();
         services.AddScoped<ISlotInfoService, SlotInfoService>();

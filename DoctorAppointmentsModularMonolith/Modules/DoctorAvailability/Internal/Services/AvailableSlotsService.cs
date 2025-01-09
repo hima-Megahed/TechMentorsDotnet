@@ -1,7 +1,7 @@
 ﻿
 
 namespace DoctorAvailability.Internal.Services;
-internal class AvailableSlotsService(DoctorSlotRepo repo) : IAvailableSlotsService
+internal class AvailableSlotsService(IDoctorSlotRepo repo) : IAvailableSlotsService
 {
     public async Task<List<DoctorSlotDto>> GetAvailableSlots()
     {

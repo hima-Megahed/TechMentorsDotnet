@@ -1,6 +1,6 @@
 ﻿using Shared.Exceptions;
 namespace DoctorAvailability.Internal.Services;
-internal class SlotInfoService(DoctorSlotRepo repo) : ISlotInfoService
+internal class SlotInfoService(IDoctorSlotRepo repo) : ISlotInfoService
 {
     public async Task<DoctorSlotDto?> GetSlotById(Guid id)
     {

@@ -1,20 +1,12 @@
-﻿using DoctorAvailability.Internal.Endpoints.AddSlot;
-
-namespace DoctorAvailability.Internal.Services;
-internal class DoctorSlotService(DoctorSlotRepo doctorSlotRepo)
+﻿namespace DoctorAvailability.Internal.Services;
+internal class DoctorSlotService(IDoctorSlotRepo doctorSlotRepo)
 {
-    internal async Task<List<DoctorSlot>> GetMySlots()
+    internal async Task<List<DoctorSlotDto>> GetMySlots()
     {
         return await doctorSlotRepo.GetMySlots();
     }
-    internal async Task<Guid> AddSlot(DoctorSlotRequestModel doctorSlotRequestModel)
+    internal async Task<Guid> AddSlot(DoctorSlotDto slotDto)
     {
-        var slot = DoctorSlot.Create(doctorSlotRequestModel.Date,
-            doctorSlotRequestModel.DoctorId,
-            doctorSlotRequestModel.DoctorName,
-            doctorSlotRequestModel.Cost);
-
-        return await doctorSlotRepo.AddSlot(slot);
-
+        return await doctorSlotRepo.AddSlot(slotDto);
     }
 }

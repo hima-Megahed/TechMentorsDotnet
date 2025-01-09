@@ -11,7 +11,12 @@ internal class AddSlotEndpoint : ICarterModule
     {
         app.MapPost("/AddSlot", async (DoctorSlotRequestModel request, DoctorSlotService servcie) =>
         {
-            return Results.Ok(await servcie.AddSlot(request));
+            var slot = new DoctorSlotDto(
+                request.Date,
+                request.DoctorId,
+                request.DoctorName,
+                request.Cost);
+            return Results.Ok(await servcie.AddSlot(slot));
         }).WithTags("DoctorAvailability");
     }
 }
