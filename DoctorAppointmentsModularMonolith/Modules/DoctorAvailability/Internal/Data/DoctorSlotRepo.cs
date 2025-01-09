@@ -1,4 +1,4 @@
-﻿namespace DoctorAvailability.Internal;
+﻿namespace DoctorAvailability.Internal.Data;
 internal class DoctorSlotRepo(DoctorAvailabilityContext context) : IDoctorSlotRepo
 {
     public async Task<List<DoctorSlotDto>> GetMySlots()
@@ -35,6 +35,7 @@ internal class DoctorSlotRepo(DoctorAvailabilityContext context) : IDoctorSlotRe
              .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.Id))
              .FirstOrDefaultAsync(s => s.Id == id);
     }
+
 
 }
 
