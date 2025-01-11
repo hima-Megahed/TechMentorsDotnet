@@ -2,7 +2,7 @@
 
 namespace AppointmentBooking.Internal.Application.AddAppointment;
 
-internal class AddAppointmentHandler(AppointmentBookingContext appointmentBookingContext, ISlotFsadService slotService) : IRequestHandler<AddAppointmentCommand, Guid?>
+internal class AddAppointmentHandler(AppointmentBookingContext appointmentBookingContext, ISlotFacadeService slotService) : IRequestHandler<AddAppointmentCommand, Guid?>
 {
     public async Task<Guid?> Handle(AddAppointmentCommand command, CancellationToken cancellationToken)
     {
