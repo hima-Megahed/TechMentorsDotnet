@@ -24,8 +24,8 @@ public class DoctorSlotServiceTests
         var slots = new List<DoctorSlotDto>
         {
 
-            new DoctorSlotDto( DateTime.Now, doctorId, doctorName, 10,Guid.NewGuid()),
-            new DoctorSlotDto(DateTime.Now.AddMinutes(15), doctorId, doctorName, 10,Guid.NewGuid()),
+            new DoctorSlotDto( DateTime.Now, doctorId, doctorName, 10,false,Guid.NewGuid()),
+            new DoctorSlotDto(DateTime.Now.AddMinutes(15), doctorId, doctorName, 10,false,Guid.NewGuid()),
 
 
         };
@@ -41,7 +41,7 @@ public class DoctorSlotServiceTests
         // Arrange
         var doctorId = Guid.NewGuid();
         var doctorName = "Doctor Name";
-        var slot = new DoctorSlotDto(DateTime.Now, doctorId, doctorName, 10, Guid.NewGuid());
+        var slot = new DoctorSlotAddDto(DateTime.Now, doctorId, doctorName, 10);
         var slotId = Guid.NewGuid();
         _mockRepository.Setup(x => x.AddSlot(slot)).ReturnsAsync(slotId);
         // Act

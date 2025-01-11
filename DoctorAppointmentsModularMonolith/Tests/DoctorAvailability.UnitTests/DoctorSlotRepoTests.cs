@@ -73,7 +73,7 @@ public class DoctorSlotRepoTests
         var options = GetInMemoryOptions("testAdd");
         var doctorId = Guid.NewGuid();
         string doctorName = "Doctor Name";
-        var slot = new DoctorSlotDto(DateTime.Now, doctorId, doctorName, 10);
+        var slot = new DoctorSlotAddDto(DateTime.Now, doctorId, doctorName, 10);
         // Act
         using (var context = new DoctorAvailabilityContext(options))
         {
@@ -96,12 +96,15 @@ public class DoctorSlotRepoTests
 
         using (var context = new DoctorAvailabilityContext(options))
         {
+            var slot1 = DoctorSlot.Create(DateTime.Now, Guid.NewGuid(), "Doctor Name 1 ", 100);
+
+            slot1.Reserve();
+
             context.DoctorSlots.AddRange(
-            DoctorSlot.Create(DateTime.Now, Guid.NewGuid(), "Doctor Name 1 ", 100),
-            DoctorSlot.Create(DateTime.Now, Guid.NewGuid(), "Doctor Name 2 ", 100),
-            DoctorSlot.Create(DateTime.Now, Guid.NewGuid(), "Doctor Name 3 ", 100)
+            slot1,
+            DoctorSlot.Create(DateTime.Now.AddMinutes(15), Guid.NewGuid(), "Doctor Name 1 ", 100),
 
-
+            DoctorSlot.Create(DateTime.Now.AddMinutes(30), Guid.NewGuid(), "Doctor Name 3 ", 100)
             );
             await context.SaveChangesAsync();
         }
@@ -115,37 +118,12 @@ public class DoctorSlotRepoTests
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal(3, result.Count); // Only 2 slots are not reserved
-            Assert.All(result, slot => Assert.False(context.DoctorSlots.First(s => s.Id == slot.Id).IsReserved)); // Verify all returned slots are not reserved
+            Assert.Equal(2, result.Count); // Only 2 slots are not reserved
+
         }
     }
 
-    //[Fact]
-    //public async Task GetAvailableSlots_ExcludesReservedSlots()
-    //{
-    //    // Arrange
-    //    var options = new DbContextOptionsBuilder<DoctorAvailabilityContext>()
-    //        .UseInMemoryDatabase(databaseName: "ExcludeReservedSlotsDB")
-    //        .Options;
 
-    //    using (var context = new DoctorAvailabilityContext(options))
-    //    {
-    //        context.DoctorSlots.Add(DoctorSlot.Create(DateTime.Now, Guid.NewGuid(), "Doctor Name 3 ", 100)); // Reserved
-    //        await context.SaveChangesAsync();
-    //    }
-
-    //    using (var context = new DoctorAvailabilityContext(options))
-    //    {
-    //        var repo = new DoctorSlotRepo(context);
-
-    //        // Act
-    //        var result = await repo.GetAvailableSlots();
-
-    //        // Assert
-    //        Assert.NotNull(result);
-    //        Assert.Empty(result); // No available slots should be returned
-    //    }
-    //}
 
     [Fact]
     public async Task GetAvailableSlots_ReturnsEmptyList_WhenNoSlotsExist()
