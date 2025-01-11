@@ -2,9 +2,9 @@
 
 namespace AppointmentBooking.Internal.Application.AddAppointment;
 
-internal class AddAppointmentHandler(AppointmentBookingContext appointmentBookingContext, ISlotInfoService slotInfoService) : IRequestHandler<AddAppointmentCommand, Guid>
+internal class AddAppointmentHandler(AppointmentBookingContext appointmentBookingContext, ISlotFsadService slotService) : IRequestHandler<AddAppointmentCommand, Guid?>
 {
-    public async Task<Guid> Handle(AddAppointmentCommand command, CancellationToken cancellationToken)
+    public async Task<Guid?> Handle(AddAppointmentCommand command, CancellationToken cancellationToken)
     {
         //validation
 
@@ -12,11 +12,15 @@ internal class AddAppointmentHandler(AppointmentBookingContext appointmentBookin
         {
             throw new ArgumentNullException(nameof(command));
         }
-        var slot = await slotInfoService.GetSlotById(command.SlotId);
+        var slot = await slotService.GetSlotById(command.SlotId);
+        if (await slotService.ReserveSlot(command.SlotId))
+        {
+            var appointment = Appointment.Create(command.SlotId, command.PatientId, command.PatientName, slot!);
+            appointmentBookingContext.Appointments.Add(appointment);
+            await appointmentBookingContext.SaveChangesAsync();
+            return appointment.Id;
+        }
+        return null;
 
-        var appointment = Appointment.Create(command.SlotId, command.PatientId, command.PatientName, slot!);
-        appointmentBookingContext.Appointments.Add(appointment);
-        await appointmentBookingContext.SaveChangesAsync();
-        return appointment.Id;
     }
 }

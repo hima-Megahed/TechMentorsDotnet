@@ -37,4 +37,8 @@ internal class DoctorSlot : Entity<Guid>
         };
     }
 
+    public void Reserve()
+    {
+        IsReserved = true;
+    }
 }

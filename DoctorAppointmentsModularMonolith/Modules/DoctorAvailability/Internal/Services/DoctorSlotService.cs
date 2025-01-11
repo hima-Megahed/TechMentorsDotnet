@@ -5,7 +5,7 @@ internal class DoctorSlotService(IDoctorSlotRepo doctorSlotRepo)
     {
         return await doctorSlotRepo.GetMySlots();
     }
-    internal async Task<Guid> AddSlot(DoctorSlotDto slotDto)
+    internal async Task<Guid> AddSlot(DoctorSlotAddDto slotDto)
     {
         return await doctorSlotRepo.AddSlot(slotDto);
     }
