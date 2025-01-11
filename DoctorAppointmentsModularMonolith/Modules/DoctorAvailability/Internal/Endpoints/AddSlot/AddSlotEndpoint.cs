@@ -11,7 +11,7 @@ internal class AddSlotEndpoint : ICarterModule
     {
         app.MapPost("/AddSlot", async (DoctorSlotRequestModel request, DoctorSlotService servcie) =>
         {
-            var slot = new DoctorSlotDto(
+            var slot = new DoctorSlotAddDto(
                 request.Date,
                 request.DoctorId,
                 request.DoctorName,

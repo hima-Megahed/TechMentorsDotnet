@@ -1,3 +1,4 @@
 ﻿namespace DoctorAvailability.Shared;
 
-public record DoctorSlotDto(DateTime Date, Guid DoctorId, string DoctorName, decimal Cost, Guid Id = default);
+public record DoctorSlotAddDto(DateTime Date, Guid DoctorId, string DoctorName, decimal Cost);
+public record DoctorSlotDto(DateTime Date, Guid DoctorId, string DoctorName, decimal Cost, bool IsReserved, Guid Id);

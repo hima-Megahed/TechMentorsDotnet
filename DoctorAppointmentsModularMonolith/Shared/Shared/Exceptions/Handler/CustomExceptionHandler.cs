@@ -23,6 +23,12 @@ public class CustomExceptionHandler
                 exception.GetType().Name,
                 context.Response.StatusCode = StatusCodes.Status404NotFound
             ),
+            BadRequestException =>
+             (
+                 exception.Message,
+                 exception.GetType().Name,
+                 context.Response.StatusCode = StatusCodes.Status400BadRequest
+             ),
             _ =>
             (
                 exception.Message,

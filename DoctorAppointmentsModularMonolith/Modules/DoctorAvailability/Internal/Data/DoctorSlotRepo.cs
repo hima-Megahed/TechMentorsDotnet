@@ -6,12 +6,12 @@ internal class DoctorSlotRepo(DoctorAvailabilityContext context) : IDoctorSlotRe
         return await context
             .DoctorSlots
             .AsNoTracking()
-            .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.Id))
+            .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.IsReserved, e.Id))
             .ToListAsync();
 
     }
 
-    public async Task<Guid> AddSlot(DoctorSlotDto slotDto)
+    public async Task<Guid> AddSlot(DoctorSlotAddDto slotDto)
     {
         var slot = DoctorSlot.Create(slotDto.Date, slotDto.DoctorId, slotDto.DoctorName, slotDto.Cost);
         context.DoctorSlots.Add(slot);
@@ -24,19 +24,29 @@ internal class DoctorSlotRepo(DoctorAvailabilityContext context) : IDoctorSlotRe
              .DoctorSlots
              .AsNoTracking()
              .Where(s => !s.IsReserved)
-             .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.Id))
+             .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.IsReserved, e.Id))
              .ToListAsync();
     }
     public async Task<DoctorSlotDto?> GetSlotsById(Guid id)
     {
-        return await context
+        var slots = await context
              .DoctorSlots
              .AsNoTracking()
-             .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.Id))
-             .FirstOrDefaultAsync(s => s.Id == id);
+             .Where(e => e.Id == id)
+             .Select(e => new DoctorSlotDto(e.Date, e.DoctorId, e.DoctorName, e.Cost, e.IsReserved, e.Id))
+             .ToListAsync();
+        return slots?.FirstOrDefault();
     }
 
-
+    public async Task<bool> ReserveSlot(Guid id)
+    {
+        var slot = await context
+            .DoctorSlots
+            .FirstOrDefaultAsync(s => s.Id == id);
+        slot?.Reserve();
+        await context.SaveChangesAsync();
+        return true;
+    }
 }
 
 
