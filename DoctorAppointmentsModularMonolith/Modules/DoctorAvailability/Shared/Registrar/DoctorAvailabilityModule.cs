@@ -1,4 +1,5 @@
-﻿using DoctorAvailability.Internal.Services;
+﻿using DoctorAvailability.Internal;
+using DoctorAvailability.Internal.Services;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Shared.Data.Interceptors;
 
