@@ -1,5 +1,5 @@
 ﻿namespace DoctorAvailability.Shared;
-public interface ISlotFsadService
+public interface ISlotFacadeService
 {
     Task<DoctorSlotDto?> GetSlotById(Guid id);
     Task<List<DoctorSlotDto>> GetAvailableSlots();

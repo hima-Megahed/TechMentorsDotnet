@@ -1,6 +1,6 @@
 ﻿using Shared.Exceptions;
 namespace DoctorAvailability.Internal.Services;
-internal class SlotFsadService(IDoctorSlotRepo repo) : ISlotFsadService
+internal class SlotFacadeService(IDoctorSlotRepo repo) : ISlotFacadeService
 {
     public async Task<DoctorSlotDto?> GetSlotById(Guid id)
     {

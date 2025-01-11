@@ -2,7 +2,7 @@
 
 namespace AppointmentBooking.Internal.Application.GetAvailableSlots;
 
-internal class AddAppointmentHandler(ISlotFsadService availableSlotsService) : IRequestHandler<GetAvailableSlotsQuery, List<DoctorSlotDto>>
+internal class AddAppointmentHandler(ISlotFacadeService availableSlotsService) : IRequestHandler<GetAvailableSlotsQuery, List<DoctorSlotDto>>
 {
 
     public async Task<List<DoctorSlotDto>> Handle(GetAvailableSlotsQuery query, CancellationToken cancellationToken)
