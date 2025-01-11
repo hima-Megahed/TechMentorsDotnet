@@ -1,4 +1,4 @@
-﻿using DoctorAvailability.Internal.Data;
+﻿using DoctorAvailability.Internal;
 using DoctorAvailability.Internal.Services;
 using DoctorAvailability.Shared;
 using Moq;

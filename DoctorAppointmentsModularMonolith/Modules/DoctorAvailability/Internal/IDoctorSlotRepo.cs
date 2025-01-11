@@ -1,4 +1,4 @@
-﻿namespace DoctorAvailability.Internal.Data;
+﻿namespace DoctorAvailability.Internal;
 
 public interface IDoctorSlotRepo
 {
