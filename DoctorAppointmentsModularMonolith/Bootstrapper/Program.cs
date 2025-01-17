@@ -41,6 +41,8 @@ builder.Services
 builder.Services
     .AddExceptionHandler<CustomExceptionHandler>();
 
+builder.Services.AddCors();
+
 
 var app = builder.Build();
 
@@ -49,9 +51,17 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
 app.MapScalarApiReference();
 app.UseHttpsRedirection();
 app.MapCarter();
+
+app.UseCors(options =>
+{
+    options.AllowAnyHeader();
+    options.AllowAnyMethod();
+    options.AllowAnyOrigin();
+});
 app.UseExceptionHandler(options => { });
 
 app.Run();
